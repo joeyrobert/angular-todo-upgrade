@@ -4,6 +4,7 @@
  */
 (function (global) {
   System.config({
+    transpiler: 'typescript',
     paths: {
       // paths serve as alias
       'npm:': 'node_modules/'
@@ -21,14 +22,15 @@
       '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
       '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
       '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
+      '@angular/upgrade': 'npm:@angular/upgrade/bundles/upgrade.umd.js',
       // other libraries
       'rxjs':                      'npm:rxjs',
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
       js: {
-        main: './bootstrap.js',
-        defaultExtension: 'js'
+        main: './bootstrap.ts',
+        defaultExtension: 'ts'
       },
       rxjs: {
         defaultExtension: 'js'
