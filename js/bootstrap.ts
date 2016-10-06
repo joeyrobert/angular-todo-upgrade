@@ -3,13 +3,15 @@ import 'node_modules/angular-route/angular-route.js';
 import 'node_modules/angular-resource/angular-resource.js';
 import './app';
 import './controllers/todoCtrl';
+import './components/renderAlotNg1';
+import './components/renderAlotNg2';
 import './services/todoStorage';
 import './directives/todoFocus';
 import './directives/todoEscape';
-
-import { UpgradeAdapter } from '@angular/upgrade';
-import { AppModule } from './app.module';
-
-export const upgradeAdapter = new UpgradeAdapter(AppModule);
+import {upgradeAdapter} from './upgrade-adapter';
 
 upgradeAdapter.bootstrap(document.body, ['todomvc']);
+import './upgraded-components';
+
+// Angular 1
+// angular.bootstrap(document.body, ['todomvc']);

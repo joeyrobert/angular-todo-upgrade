@@ -10,7 +10,7 @@ angular.module('todomvc')
     'use strict';
 
     var todos = $scope.todos = store.todos;
-
+    $scope.count = 1;
     $scope.newTodo = '';
     $scope.editedTodo = null;
 
@@ -19,6 +19,10 @@ angular.module('todomvc')
       $scope.completedCount = todos.length - $scope.remainingCount;
       $scope.allChecked = !$scope.remainingCount;
     }, true);
+
+    $scope.$watch('newTodo', function () {
+      $scope.count = $scope.count * 2;
+    });
 
     // Monitor the current route for changes and adjust the filter accordingly.
     $scope.$on('$routeChangeSuccess', function () {

@@ -17,3 +17,4 @@ node_modules/todomvc-common/*
 !node_modules/todomvc-common/base.css
 !node_modules/todomvc-common/base.js
 npm-debug.log
+.DS_Store
