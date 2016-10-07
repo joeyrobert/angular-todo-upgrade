@@ -10,7 +10,7 @@ angular.module('todomvc')
     'use strict';
 
     var todos = $scope.todos = store.todos;
-    $scope.count = 1;
+    $scope.count = 0.5;
     $scope.newTodo = '';
     $scope.editedTodo = null;
 
