@@ -1,4 +1,4 @@
-/*global angular */
+import * as angular from 'angular';
 
 /**
  * The main TodoMVC app module
@@ -6,20 +6,20 @@
  * @type {angular.Module}
  */
 angular.module('todomvc', ['ngRoute', 'ngResource'])
-  .config(function ($routeProvider) {
+  .config(['$routeProvider', function ($routeProvider) {
     'use strict';
 
     var routeConfig = {
       controller: 'TodoCtrl',
-      templateUrl: '/js/app.html',
+      template: require('./app.html'),
       resolve: {
-        store: function (todoStorage) {
+        store: ['todoStorage', function (todoStorage) {
           // Get the correct module (API or localStorage).
           return todoStorage.then(function (module) {
             module.get(); // Fetch the todo records in the background.
             return module;
           });
-        }
+        }]
       }
     };
 
@@ -29,4 +29,4 @@ angular.module('todomvc', ['ngRoute', 'ngResource'])
       .otherwise({
         redirectTo: '/'
       });
-  });
+  }]);

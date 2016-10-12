@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 
 @Component({
   selector: 'render-alot-ng2',
-  templateUrl: '/js/components/render-alot-ng2.html',
+  template: require('./render-alot-ng2.html'),
   inputs: ['text', 'count']
 })
 export class RenderAlotComponent {
@@ -10,7 +10,11 @@ export class RenderAlotComponent {
   private _count = [];
 
   set count(count) {
-    this._count = Array.from({length: count}, (v, k) => k);
+    // var countArr = [];
+    // for (var i = 0; i < count; i++) {
+    //   countArr.push(true);
+    // }
+    // this._count = countArr;
   }
 
   get count() {

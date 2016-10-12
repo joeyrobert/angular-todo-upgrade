@@ -1,6 +1,12 @@
-import 'node_modules/angular/angular.js';
-import 'node_modules/angular-route/angular-route.js';
-import 'node_modules/angular-resource/angular-resource.js';
+import 'core-js/es6';
+import 'core-js/es7/reflect';
+require('zone.js/dist/zone');
+
+import 'angular/angular.js';
+import 'angular-route/angular-route.js';
+import 'angular-resource/angular-resource.js';
+import 'todomvc-common/base.css';
+import 'todomvc-app-css/index.css';
 import './app';
 import './controllers/todoCtrl';
 import './components/renderAlotNg1';
@@ -11,7 +17,3 @@ import './directives/todoEscape';
 import {upgradeAdapter} from './upgrade-adapter';
 
 upgradeAdapter.bootstrap(document.body, ['todomvc']);
-import './upgraded-components';
-
-// Angular 1
-// angular.bootstrap(document.body, ['todomvc']);

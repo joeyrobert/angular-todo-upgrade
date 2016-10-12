@@ -1,11 +1,15 @@
-/*global angular */
+import * as angular from 'angular';
 
 export class RenderAlotComponent {
   public text;
   private _count = [];
 
   set count(count) {
-    this._count = Array.from({length: count}, (v, k) => k);
+    // var countArr = [];
+    // for (var i = 0; i < count; i++) {
+    //   countArr.push(true);
+    // }
+    // this._count = countArr;
   }
 
   get count() {
@@ -15,7 +19,7 @@ export class RenderAlotComponent {
 
 angular.module('todomvc')
   .component('renderAlotNg1', {
-    templateUrl: '/js/components/render-alot-ng1.html',
+    template: require('./render-alot-ng1.html'),
     bindings: {
       text: '<',
       count: '<'

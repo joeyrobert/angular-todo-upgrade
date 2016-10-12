@@ -1,4 +1,4 @@
-/*global angular */
+import * as angular from 'angular';
 
 /**
  * Directive that executes an expression when the element it is applied to gets

@@ -1,3 +1,4 @@
+import * as angular from 'angular';
 import {RenderAlotComponent} from './components/renderAlotNg2';
 import {upgradeAdapter} from './upgrade-adapter';
 
