@@ -6,7 +6,7 @@ var helpers = require('./helpers');
 
 module.exports = {
   entry: {
-    'app': './src/bootstrap-ng1-ng2.ts'
+    'app': './src/bootstrap-ng1.ts'
   },
 
   resolve: {
