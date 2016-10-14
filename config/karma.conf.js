@@ -2,9 +2,6 @@ var webpackConfig = require('./webpack.test.js');
 
 module.exports = function (config) {
   config.set({
-    // base path used to resolve all patterns
-    basePath: '../',
-
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['jasmine'],
@@ -17,10 +14,6 @@ module.exports = function (config) {
     preprocessors: { 'spec.bundle.ts': ['webpack', 'sourcemap'] },
 
     webpack: webpackConfig,
-
-    webpackServer: {
-      noInfo: true // prevent console spamming when running in Karma!
-    },
 
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
     reporters: ['progress'],

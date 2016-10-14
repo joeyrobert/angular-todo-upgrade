@@ -2,9 +2,12 @@
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --config config/webpack.dev.js --inline --progress --port 8080",
-    "test": "karma start config/karma.conf.js",
+    "unit": "karma start config/karma.conf.js",
+    "e2e": "npm run pree2e && protractor config/protractor.conf.js",
+    "pree2e": "webdriver-manager start &",
+    "test": "npm run unit && npm run e2e",
     "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
-    "postinstall": "typings install"
+    "postinstall": "typings install && webdriver-manager update"
   },
   "dependencies": {
     "@angular/common": "2.0.2",
@@ -44,6 +47,7 @@
     "live-server": "1.1.0",
     "null-loader": "0.1.1",
     "phantomjs-prebuilt": "2.1.13",
+    "protractor": "^4.0.9",
     "raw-loader": "0.5.1",
     "rimraf": "2.5.4",
     "style-loader": "0.13.1",
