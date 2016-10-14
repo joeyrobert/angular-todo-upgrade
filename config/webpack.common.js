@@ -1,7 +1,5 @@
 var webpack = require('webpack');
-var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var SplitByPathPlugin = require('webpack-split-by-path');
 var helpers = require('./helpers');
 
 module.exports = {
@@ -35,19 +33,8 @@ module.exports = {
   },
 
   plugins: [
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: ['app']
-    // }),
-
     new HtmlWebpackPlugin({
       template: 'src/index.html'
-    }),
-
-    new SplitByPathPlugin([
-      {
-        name: 'vendor',
-        path: path.join(__dirname, '..', 'node_modules')
-      }
-    ])
+    })
   ]
 };

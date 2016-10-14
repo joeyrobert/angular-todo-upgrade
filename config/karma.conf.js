@@ -1,4 +1,4 @@
-var webpackConfig = require('./webpack.dev.js');
+var webpackConfig = require('./webpack.test.js');
 
 module.exports = function (config) {
   config.set({
@@ -10,21 +10,11 @@ module.exports = function (config) {
     frameworks: ['jasmine'],
 
     // list of files/patterns to load in the browser
-    files: [{ pattern: 'spec.bundle.js', watched: false }],
-
-    // files to exclude
-    exclude: [],
-
-    plugins: [
-      require('karma-jasmine'),
-      require('karma-phantomjs-launcher'),
-      require('karma-sourcemap-loader'),
-      require('karma-webpack')
-    ],
+    files: [{ pattern: 'spec.bundle.ts', watched: false }],
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: { 'spec.bundle.js': ['webpack', 'sourcemap'] },
+    preprocessors: { 'spec.bundle.ts': ['webpack', 'sourcemap'] },
 
     webpack: webpackConfig,
 

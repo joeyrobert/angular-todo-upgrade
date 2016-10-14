@@ -1,29 +1,28 @@
 /*global describe, it, beforeEach, inject, expect*/
-
 describe('Todo Controller', function () {
   var ctrl, scope, store;
 
-  // Load the module containing the app, only 'ng' is loaded by default.
-  beforeEach(angular.mock.module('todomvc'));
+  beforeEach(() => {
+    angular.mock.module('todomvc');
+    angular.mock.inject(($controller, $rootScope, localStorage) => {
+      scope = $rootScope.$new();
 
-  beforeEach(angular.mock.inject(function ($controller, $rootScope, localStorage) {
-    scope = $rootScope.$new();
+      store = localStorage;
 
-    store = localStorage;
+      localStorage.todos = [];
+      localStorage._getFromLocalStorage = function () {
+        return [];
+      };
+      localStorage._saveToLocalStorage = function (todos) {
+        localStorage.todos = todos;
+      };
 
-    localStorage.todos = [];
-    localStorage._getFromLocalStorage = function () {
-      return [];
-    };
-    localStorage._saveToLocalStorage = function (todos) {
-      localStorage.todos = todos;
-    };
-
-    ctrl = $controller('TodoCtrl', {
-      $scope: scope,
-      store: store
+      ctrl = $controller('TodoCtrl', {
+        $scope: scope,
+        store: store
+      });
     });
-  }));
+  });
 
   it('should not have an edited Todo on start', function () {
     expect(scope.editedTodo).toBeNull();
@@ -43,7 +42,7 @@ describe('Todo Controller', function () {
       scope.$emit('$routeChangeSuccess');
 
       expect(scope.status).toBe('');
-      expect(scope.statusFilter).toBeNull();
+      expect(scope.statusFilter).toEqual({});
     });
 
     describe('being at /active', function () {
