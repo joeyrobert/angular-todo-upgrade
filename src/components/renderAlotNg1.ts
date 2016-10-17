@@ -5,11 +5,7 @@ export class RenderAlotComponent {
   private _count = [];
 
   set count(count) {
-    // var countArr = [];
-    // for (var i = 0; i < count; i++) {
-    //   countArr.push(true);
-    // }
-    // this._count = countArr;
+    this._count = Array.from(new Array(count || 0), (v, k) => k);
   }
 
   get count() {
