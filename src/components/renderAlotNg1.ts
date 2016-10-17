@@ -2,14 +2,14 @@ import * as angular from 'angular';
 
 export class RenderAlotComponent {
   public text;
-  private _count = [];
+  public countArr = [];
 
   set count(count) {
-    this._count = Array.from(new Array(count || 0), (v, k) => k);
+    this.countArr = Array.from(new Array(count || 0), (v, k) => k);
   }
 
   get count() {
-    return this._count;
+    return this.countArr.length;
   }
 }
 

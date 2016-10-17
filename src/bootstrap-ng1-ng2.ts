@@ -9,10 +9,12 @@ import 'todomvc-app-css/index.css';
 import './app';
 import './controllers/todoCtrl';
 import './components/renderAlotNg1';
-import './components/renderAlotNg2';
-import './services/todoStorage';
 import './directives/todoFocus';
 import './directives/todoEscape';
+import './services/todoStorage';
+import './services/fibonacciNg1';
+import './downgraded';
+import './upgraded';
 import {upgradeAdapter} from './upgrade-adapter';
 
 upgradeAdapter.bootstrap(document.body, ['todomvc']);

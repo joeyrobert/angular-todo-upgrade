@@ -4,11 +4,12 @@
     "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
     "sleep-protractor": "sleep 10 && npm run protractor",
     "e2e": "run-p -r webdriver start sleep-protractor",
+    "ng1": "karma start config/karma.ng1.js",
+    "ng2": "karma start config/karma.ng2.js",
     "postinstall": "typings install && webdriver-manager update",
     "protractor": "protractor config/protractor.conf.js",
     "start": "webpack-dev-server --config config/webpack.dev.js --inline --progress --port 8080",
-    "test": "npm run unit && npm run e2e",
-    "unit": "karma start config/karma.conf.js",
+    "test": "npm run ng1 && npm run ng2 && npm run e2e",
     "webdriver": "webdriver-manager start"
   },
   "dependencies": {

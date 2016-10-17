@@ -1,4 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, Inject} from '@angular/core';
+import {FibonacciNg2} from '../services/fibonacciNg2';
+import {FibonacciNg1} from '../services/fibonacciNg1';
 
 @Component({
   selector: 'render-alot-ng2',
@@ -7,13 +9,20 @@ import {Component} from '@angular/core';
 })
 export class RenderAlotComponent {
   public text;
-  private _count = [];
+  public countArr = [];
+  public ng2Sequence = [];
+  public ng1Sequence = [];
+
+  constructor(private fibonacciNg2: FibonacciNg2, @Inject('FibonacciNg1') private fibonacciNg1: FibonacciNg1) {
+  }
 
   set count(count) {
-    this._count = Array.from(new Array(count || 0), (v, k) => k);
+    this.countArr = Array.from(new Array(count || 0), (v, k) => k);
+    this.ng2Sequence = this.fibonacciNg2.firstN(count);
+    this.ng1Sequence = this.fibonacciNg1.firstN(count);
   }
 
   get count() {
-    return this._count;
+    return this.countArr.length;
   }
 }

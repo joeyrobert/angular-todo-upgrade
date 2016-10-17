@@ -4,5 +4,6 @@ exports.config = {
   capabilities: {
     'browserName': 'chrome'
   },
-  specs: ['../test/e2e/**/*.spec.js']
+  specs: ['../test/e2e/**/*.spec.js'],
+  useAllAngular2AppRoots: true
 };
