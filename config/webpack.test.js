@@ -8,7 +8,7 @@ module.exports = webpackMerge(commonConfig, {
   output: {},
   resolve: {
     alias: {
-      'bootstrap-app': path.join(__dirname, '..', 'src', 'bootstrap-ng1-ng2.ts')
+      'bootstrap-app': path.join(__dirname, '..', 'src', 'bootstrap.ts')
     }
   }
 });

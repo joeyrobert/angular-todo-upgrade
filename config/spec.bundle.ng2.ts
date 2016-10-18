@@ -12,6 +12,7 @@ import 'zone.js/dist/fake-async-test';
 import 'rxjs/Rx';
 import * as testing from '@angular/core/testing';
 import * as browser from '@angular/platform-browser-dynamic/testing';
+import '../src/bootstrap';
 
 testing.TestBed.initTestEnvironment(
   browser.BrowserDynamicTestingModule,
