@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
-import { inject, TestBed, ComponentFixtureAutoDetect } from '@angular/core/testing';
-import { RenderAlotComponent } from '../../src/components/renderAlotNg2';
+import {Component} from '@angular/core';
+import {inject, TestBed, ComponentFixtureAutoDetect} from '@angular/core/testing';
+import {AppModule} from '../../src/upgrade-adapter';
+import {RenderAlotComponent} from '../../src/components/renderAlotNg2';
 
 describe('Render Alot', () => {
   // provide our implementations or mocks to the dependency injector
   beforeEach(() => TestBed.configureTestingModule({
-    declarations: [RenderAlotComponent],
+    imports: [AppModule],
     providers: [
       RenderAlotComponent,
       { provide: ComponentFixtureAutoDetect, useValue: true }

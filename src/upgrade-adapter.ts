@@ -10,9 +10,7 @@ export const upgradeAdapter = new UpgradeAdapter(forwardRef(() => AppModule));
 @NgModule({
   declarations: [RenderAlotComponent],
   providers: [FibonacciNg2],
-  imports: [
-    BrowserModule,
-  ]
+  imports: [BrowserModule]
 })
 export class AppModule {
 }

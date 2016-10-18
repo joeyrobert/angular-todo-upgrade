@@ -1,5 +1,6 @@
-import {Component, Inject} from '@angular/core';
+import {Component} from '@angular/core';
 import {inject, TestBed, ComponentFixtureAutoDetect} from '@angular/core/testing';
+import '../../src/bootstrap-ng1-ng2';
 import {AppModule} from '../../src/upgrade-adapter';
 import {FibonacciNg2} from '../../src/services/fibonacciNg2';
 
