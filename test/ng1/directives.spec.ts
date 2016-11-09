@@ -23,4 +23,9 @@ describe('todoFocus directive', function () {
 
     expect(browser.deferredFns.length).toBe(1);
   });
+
+  it('should test downgraded component', function () {
+    var el = angular.element('<render-alot-ng2 />');
+    compile(el)(scope);
+  });
 });
